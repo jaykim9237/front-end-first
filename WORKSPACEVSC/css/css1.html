@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 연습</title>
+    <!--
+        위치에 따라 주석을 다르게 사용해야하는데, 여기는 html주석이야
+
+        *CSS 정의
+        1. 외부스타일 - 별도의 파일로 저장 (전체적인 것을 하고)
+        2. 내부 스타일 - 현재 HTML 내에 <style>태그로 정의(이 곳에서만 조금 다른 것을 살짝 내부로 하고)
+        3. 인라인 스타일 - 태그 내에 style 속성으로 정의 (우선순위가 가장 먼저, 그러나 코드가 지저분하고 수정이 어려움)
+    -->
+
+    <style>
+        /*css의 주석은 또 다르게 생겼어
+
+        내부 스타일 정의 
+        
+        선택자(대상)를 지정/선택하여 속성(어떤 것을 줄지)을 지정하여 값(속성의 값)을 주어 css를 정의한다.
+        *은 모든 것, body는 바디 안에 있는 것\
+        
+        **네임의 용도는 서버로 보낼 때 사용되며, 여러개가 중복으로 사용이 될 수 있다. 그래서 id(# 딱 하나만 사용이 가능)나 class(.)가 사용된다.*/
+
+        h1{
+
+            /*텍스트 관련 스타일 속성*/
+            color: rgb(187,18,0);
+            font-size: 30px; /*px, pt, em, ex*/
+            font-weight: bolder;
+            font-family: '궁서';
+            text-align: center;
+            text-decoration: underline;
+
+
+            /* 박스모텔 관련 스타일 속성*/
+            border-color: rgb(92, 170, 69);
+            border-style: solid;
+            border-width: 2px;
+            width: 15em;
+            height: 1em;
+            padding: 10px;
+            margin: 15px auto;
+
+        }
+
+        p{
+            color: rgb(60,179,113);
+            font-size: 20px;
+            font-weight: 100;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: inherit;
+            font-variant: initial;
+            text-align: right;
+            text-shadow: 2px 2px wheat;
+            text-decoration: underline orangered;
+
+            border-color: yellowgreen;
+             border-style: groove; 
+            border-width: 3px;
+            width: max-content;
+            height: 20px;
+            padding: 10px;
+            margin: 20px, auto;
+        }
+
+        #ohnotext{
+            color: rgba(238, 99, 71, 0.5);
+        }
+        
+        .againtext{
+            color: #b16da9;
+        }
+        
+        table, td, th{
+            border: 1px solid indigo;
+            border-collapse: collapse;/*분리되어있던 것을 하나로*/
+            margin: auto;
+        }
+
+        td{
+            width: 100px;
+            height: 100px;
+            text-align: right;
+            vertical-align: center;
+            background-color: pink;
+        }
+
+        td.second{
+            background-color: plum;
+        }
+        th{
+            font-size: larger;
+            font-weight: 40px;
+            text-align: end;
+            vertical-align: center;
+            height: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="yellow">CSS가 적용되는 텍스트</h1>
+    <p>아니 이렇게 갑자기 막힐 일이야?</p>
+    <h3>It's massy</h3>
+    <p>I hate this situation</p>
+    <p id="ohnotext">ohhhhhhhhh nooooooo</p>
+    <p class="againtext">but I believe I can do every</p>
+    <h4>let's take my time</h4>
+    <p>do it do it</p>
+
+    <table>
+        <tr>
+            <th>wow</th>
+            <th>oh</th>
+            <th>yes</th>
+        </tr>
+        <tr>
+            <td>h</td>
+            <td class="second">ee</td>
+            <td>y</td>
+        </tr>
+        <tr>
+            <td>g</td>
+            <td>oo</td>
+            <td>d</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

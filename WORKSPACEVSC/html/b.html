@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+</head>
+<body>
+    <h1>[표 만들기]</h1>
+
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+
+        </tr>
+    </table><br>
+    <table border="1">    
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+
+        </tr>
+
+
+    </table><br>
+    <table border="1">    
+        <tr>
+            <td colspan="2">1</td><!--셀 합치기-->
+            
+        </tr>
+        <tr>
+            <td rowspan="3">3</td><!--5,6이 사라져야 하는 것이지-->
+            <td>4</td>
+           
+        </tr>
+        <tr>
+            <td>6</td>
+           
+        </tr>
+        <tr>
+            <td>8</td>
+           
+        </tr>
+
+    </table><br>
+    <!--3개가 필수적으로 필요하다. 테이블 태그, 행(tr), 열(td). 한칸 한칸 사이에는 무언가가 들어갈 수 있다.
+    칸 합치기를 사용하기도 한다. 이 때 사용 되는 것으로는 colspan, rowspan등이 있다.-->
+
+    <!--연습-->
+    <table border="1">
+        <tr>
+            <td colspan="4">1</td>
+            
+
+        </tr>
+        <tr>
+            <td colspan="2", rowspan="2">2</td>
+            
+            <td>3</td>
+            <td>4</td>
+
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">7</td>
+            
+            <td colspan="2">8</td>
+            
+
+        </tr>
+    </table><br>
+
+    <table>
+        <tr>
+            <td><img src="../image/icon (2).png"></td>
+            <td><img src="../image/icon (3).png"></td>
+            <td><img src="../image/icon (4).png"></td>
+            상대경로를 사용하는 것이 좋아 절대경로를 사용하면 내 컴퓨터를 벗어나서 어딘가로 갔을 때 (예를 들어 웹) 찾을 수 없을거야 
+        </tr>
+        <tr>
+            <td>1번<br>크리스마스<br> 무채색 <br> 12월 25일</td>
+            <td>2번<br>체크모양<br>맞다는 의미<br>원 안에 있음</td>
+            <td>3번<br>스노우볼 <br>무채색 <br>크리스마스</td>
+        </tr>
+    </table><br>
+    <!--제목만 따로 사용하는 것이 있어 td 대신에 th를 사용해 보쟈-->
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>상품명</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>마우스</td> 
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>키보드</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>모니터</td>
+            <td>5000</td>
+        </tr>
+
+    </table><br>
+
+    <hr><!--가로 선이라고 보면 된다. single tag-->
+
+    <div>div 태그 내에 입력한 내용/ 안에 입력할 자리를 만들기 위해서 </div>
+    <p>일반 문장들<span>span캐그 내에 입력한 내용</span></p>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입신청 양식</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgba(243, 198, 34, 0.6);
+            color: #0a0304;
+            font-weight: bold;
+            line-height: 2em;
+            background-image: url(../image/pngwing.com.png);
+        }
+        div{
+            background-color: rgba(250, 233, 164, 0.774);
+            width: 45%;
+            margin: auto;
+        }
+        h1{
+            color: #D92528;
+            margin: 15px auto;
+            text-align: center;
+        }
+        hr{
+            height: 2px;
+            background-color: #D92528;
+            border :0px;
+            width: 30%;
+        }
+        .center{
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .welcome{
+
+            
+            text-align: center;
+            width: 100%;
+        }
+        .agree{
+            text-align: center;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .agreeagree{
+            text-align: start;
+        }
+        input, select{
+            background-color: #d925285b;
+        }
+        h3{
+            text-align: center;
+            background-color: #d925285b;
+            width: 30%;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>WELCOME</h1>
+    <table class="welcome" "center" >
+        <tr>
+            <td><h3>환영합니다 :)</h3>
+                <h4> 가입을 하러 오셨군요! <br>
+                빠르게 작성을 샤샤삭 해주시면, <br>
+                다음 과정으로 넘어갈 수 있습니다.</h4>
+            </td>
+        </tr>
+    </table>
+</div> 
+<hr>
+<div>
+    <form action="index.html" method="get">
+        <table class="agree center"  >
+         <tr>
+             <td class="agreeagree">
+            <input type="checkbox" name="agree" value="11"> 가입에 동의하십니까?(필수)<br>
+            <input type="checkbox" name="location_agree" value="22"> 위치 정보 제공에 동의하십니까?(필수)<br>
+            <input type="checkbox" name="agree" value="11"> 프로모션 정보수신 동의(선택)?<br>
+             </td>
+        </tr>
+        <tr><td>가장 좋아하는 색을 선택해주세요
+             <input type="color" name="favorite" value="color"><br>
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="다음"></td></tr>
+    </table>
+    <hr>
+    <table class="center" >
+        <tr><td>아이디 </td><td> <input type="text"><br></td></tr>
+        <tr><td>비밀번호 </td><td> <input type="password"><br></td></tr>
+        <tr><td>비밀번호 재확인  </td><td> <input type="password"><br></td></tr>
+    </table>
+<hr>
+    <table class= "center" >
+        <tr><td>이름 </td><td>  <input type="text" name="name" value="name"><br></td>
+            <td rowspan="4">
+                유입경로 <br>
+                <select name="where" multiple>
+                    <option>지인추천</option>
+                    <option>sns</option>
+                    <option>광고</option>
+                    <option>전단지</option>
+                    <option>etc</option>
+                </select><br>
+                </td>
+        </tr>
+        <tr><td>이메일 </td><td> <input type="email" name="email" value="email"><br></td></tr>
+        <tr><td>생년월일 </td><td> <input type="date"><br></td></tr>
+        <tr><td>성별 </td><td> <input type="radio" name="gender" value="woman"> woman
+                <input type="radio" name="gender" value="man"> man <br></td></tr>
+        <tr><td>전화번호 </td><td><input type="tel"><br></td></tr>
+        <tr><td>
+        통신사 </td><td><input type="radio" name="call" value="kt"> kt
+                <input type="radio" name="call" value="skt"> skt
+                <input type="radio" name="call" value="lg"> lg</td></tr>
+    </table>
+<hr>
+    
+<hr>
+      
+    <table class="center">
+        <tr><td><input type="reset" value="다시">
+        <input type="submit" value="가입"></td></tr>
+    </table>
+</form>
+</div>
+</body>
+</html>
