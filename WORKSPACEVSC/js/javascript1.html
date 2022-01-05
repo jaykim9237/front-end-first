@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript1</title>
+    <!--javascript 정의-->
+    <script>
+        //javascript 코드가 들어가는 곳
+
+        function test1(){
+            let a = 1;
+            let b = 2;
+            let c = a + b;
+           // alert('결과는' + c + '입니다.');
+            console.log('결과는' + c + '입니다.');
+            let d = '문자열';
+            alert(d);
+            let e;
+           /* alert(typeof(a));
+            alert(typeof(d));
+            alert(typeof(e));*/
+            console.log(typeof(a));
+            console.log(typeof(d));
+            console.log(typeof(e));
+        }
+
+        function test2(){
+            alert('대화상자');
+
+            let res = confirm('confirm 대화상자');
+            console.log(res);
+            res = prompt('prompt 대화상자')
+            console.log(res);
+            //자료형이 처음에 정해지는 것이 아니라서 값에 따라 자료형이 달라질 수 있다.
+            
+        }
+        function test3(){
+            /*변수 a,b,c 를 선언
+            a와b를 각각 정수로 입력 받는다. 더한 값을 c에 대입한다.
+            계산 결과를 출력한다.*/
+            
+            let a, b, c;
+            
+            console.log(typeof(a));
+            
+            a = prompt('정수를 입력하세요');
+            b = prompt('정수를 입력하세요');
+            c = parseInt(a) + parseInt(b);
+            //형변환을 시켜주는 것이라고 생각하면 좋을 것 같움
+            
+            console.log(typeof(a));
+            console.log(typeof(c));
+            alert(c);
+            console.log(c)
+        }
+        function test4(a,b){
+            let res;
+            res = a * b;
+            console.log(res);
+
+            let oo;
+            oo = a + b;
+            console.log(oo);
+            /*슬쩍 해본 것인데 프롬트로 받으면 스트링이었을 것인데, 그냥 내가 넣은 
+            숫자이니까 그대로 넘버로 나오는 것이야*/ 
+
+            res = a > b;
+            console.log(res); 
+            res = a > 0 && b > 0;
+            console.log(res);
+        }
+        function test5(n){
+            //0이면 거짓 다른 정수이면 참으로 간주한다.
+            if(n != 0){
+                alert('n은보다 크다');
+            }  else{
+                alert('n은 10보다 작거나 같다.');
+            }
+        }
+        function test6(){
+            //반복문 -for, while, do-while까지 모두 자바와 유사
+            //콘솔에 1-10 까지 출력
+            for (let index = 1; index < 11; index++) {
+                console.log(index);
+                
+            }
+        }
+        function sum(start, end){
+
+           /* 
+           a,b 로 받아서
+            let c = 0;
+            if(a < b){
+            for (let index = a; index <= b; index++) {
+                c += index;
+            }
+
+            console.log(typeof(c));
+            console.log(c);}
+            else 
+            
+            나는 a>b 의 경우를 못생각했어 흠...*/
+
+            let s = 0, temp;
+            if(start > end){
+                temp = start;
+                start = end;
+                end =temp;
+            }
+
+            for(let i = start; i <= end; i++){
+                s += i;
+            }
+            alert('합계는' + s)
+        }
+    </script>
+</head>
+<body>
+    <h1>[ Javascript 1 ]</h1>
+    <p><a href="javascript:test1()">test1() 실행</a></p>
+    <p><a href="javascript:test2()">javascript의 대화 상자</a></p>
+    <p><a href="javascript:test3()">prompt()함수로 입력받기</a></p>
+    <p><a href="javascript:test4(10, 20)">parameter로 전달받은 정수 개의 연산</a></p>
+    <p><a href="javascript:test5(0)">if문</a></p>
+    <p><a href="javascript:test6()">for문</a></p>
+    <p><a href="javascript:sum(20,30)">전달 받은 두 값 사이의 정수 합계</a></p>
+</body>
+</html>

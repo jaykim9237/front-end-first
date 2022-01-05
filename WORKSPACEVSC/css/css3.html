@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS의 다양한 선택자</title>
+    <style>
+        /*root라고 하고 node이며 하나의 단계를 내려갈 때 마다 부모자식이고 
+        같은 수준에 있으면 형제가 되는 것이야*/
+        p{
+            color: blue;
+        }
+        /*body p 띄어쓰기는 자손(몇단게도 상관없어) ㅇㅇ아래 있는 ㅁㅁ*/
+        body p{
+            color: chartreuse;
+        }
+        /*body > p 부등호는 자식(바로 한 단계 아래에 있는!!)*/
+        body > p{
+            color: darkorange;
+        }
+        input{
+            background-color: blueviolet;
+        }
+        /*속성선택자*/
+        input[type="password"], input[type="email"]{
+            background-color: burlywood;
+        }
+        /*가상 선택자*/
+
+        a:link{
+            color: dodgerblue;
+            background-color: wheat;
+            text-decoration: none;
+        }
+        a:visited{
+            /*방문했던 링크*/
+            color: sienna;
+            background-color: wheat;
+            text-decoration: none;
+
+        }
+        a:hover{
+            /*마우스를 올려 놓았을 때*/
+            color: red;
+            background-color: wheat;
+            text-decoration: none;
+
+        }
+        a:active{
+            /*클릭을 했을 때*/
+            color: hotpink;
+            background-color: black;
+            text-decoration: none;
+
+        }
+         td:hover{
+            background-color: blueviolet;
+        } 
+
+        /*tr:hover{
+            color: chartreuse;
+        }*/
+
+        /*자식 태그 중에 순서를 저장하여 선택*/
+        /*body p:nth-child(2){
+            color: green;
+        }*/
+
+        body > :nth-child(2n){
+            color: hotpink;
+            background-color: rgba(229, 168, 168, 0.623);
+        }
+        table tr:nth-last-child(){
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>제목</h1>
+    <p>문장1</p>
+    <p>문장2</p>
+    <p>문장3</p>
+    <div>
+        <p>div 내의 p</p> 
+        <form>
+            <input type="text"><br>
+            <input type="password"><br>
+            <input type="email"><br> 
+            <input type="submit"><br> 
+        </form>
+    </div>
+    <div>
+        <p><a href="../html/index.html">인덱스</a></p>
+    </div>
+    <table>
+        <tr>
+            <td>11111</td>
+            <td>22222</td>
+        </tr>
+        <tr>
+            <td>33333</td>
+            <td>44444</td>
+        </tr>
+        <tr>
+            <td>55555</td>
+            <td>66666</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
