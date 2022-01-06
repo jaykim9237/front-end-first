@@ -1,0 +1,7 @@
+/*피씨용 화면*/
+#output{
+    background-color: indianred;
+    color: ivory;
+    font-size: 3em;
+    width: 60%;
+}

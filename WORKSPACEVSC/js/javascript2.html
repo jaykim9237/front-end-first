@@ -5,34 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>외부 파일 사용</title>
-    <script>
-        function test(){
-            alert(screen.width)
-        }
-    </script>
-    <style>
-        @media (min-width:751px){
-            #output{
-                background-color: indianred;
-                color: ivory;
-                font-size: 3em;
-                width: 60%;
-            }
-        }
-        @media(max-width:750px){
-            #output{
-                background-color: rgb(203, 231, 100);
-                color: rgb(39, 15, 179);
-                font-size: 5em;
-                width: 100%;
-            }
-        }
-        @media print {
-            a{
-                display: none;
-            }
-        }
-    </style>
+
+   <!-- CSS 파일 불러오기 -->
+  <!-- <link rel="stylesheet" href="style.css"> 
+    css파일을 하나로 해서 다양한 것들을 한번에-->
+
+
+    <!-- 반응형 CSS 파일 불러오기 -->
+    <link rel="stylesheet" media="(min-width:751px)" href="pc.css">
+    <link rel="stylesheet" media="(max-width:750px)" href="mobile.css">
+    <link rel="stylesheet" media="print" href="print.css">
+
+    
+   <!-- js 파일 불러오기 -->
+    <script src="mycode.js"></script>
+
 </head>
 <body>
     <p><a href="javascript:test()">자바스크립트 함수 실행</a></p>
