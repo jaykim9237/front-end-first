@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script>
+        function btclick(){
+            alert('나도 안녕, 버튼을 클릭했구나')
+        }
+    </script>
+</head>
+<body>
+    <h1>[javascript의 Event]</h1>
+    <p> *Click 이벤트 </p>    
+    <p><input type="button" value="안녕" onclick="btclick()"></p> <!--버튼은 하고 온클릭은 안에 실행할 함수를 호출 할 것이 안에 들어가-->
+    <p onclick="btclick()" style="cursor: pointer;color: blueviolet;">클릭이벤트 처리된 문자열</p>
+    <p onclick="btclick()"><img src="../image/icon (4).png"></p>
+
+    <p>mouseover 이벤트</p>
+    <p><img src="../image/icon (3).png" onmouseover="btclick()"></p>
+    <!-- 자연스럽게 마우스 오버 할때 마다 소리나게 하면 뭔가 작품이 될 수있을 거 같은데 -->
+</body>
+</html>

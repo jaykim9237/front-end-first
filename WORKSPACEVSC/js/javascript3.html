@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 객체</title>
+    <script>
+        function test1(){
+            window.open('../html/index.html', 'newname','top=100, left=500, width=200,location=no,status=no');
+        }
+        function test2(){
+            let x = screen.width; //가로크기
+            let y = screen.height; //세로크기
+            alert(x + ',' + y);
+        }
+        function test3(){
+            alert(location.href); //현재 url 읽기
+            location.href = 'http://www.naver.com/'; //현재 url 변경 0 그곳으로 이동
+        }
+        function test4(){
+            history.go(-1); //음의 정수는 뒤로, 양의 정수는 앞으로 
+        }
+        function test5(){
+            alert(navigator.userAgent)//웹브라우저 정보
+        }
+        function test6(){
+            document.write('<h1>좋아... 조금 피곤하지만 일단 그냥 하자고</h1>');
+        }
+        function test7(){
+            //화면 중앙에 가로 세로 1/2 크기의 창을 열고
+            //이미지와 설정을 출력한다.
+            let w = screen.width/2;
+            let h = screen.height/2;
+            let t = screen.height/4;
+            let l = screen.width/4;
+
+            let win = window.open('', 'test file', 'top = '+ t +', left = '+ l +', width = '+ w +', height = '+ h);
+            win.document.write('<html> <body><p><img src="../image/icon (1).png"></p><p>그림에 대한 설명</p></body></html>');  //변수 쩜 하면 그걸 불러서 하는 것인거지 
+        }
+    </script>
+</head>
+<body>
+    <h1>[javascript의 내장 객체]</h1>
+    <p><a href="javascript:test1()"]>window 객체</a></p>
+    <p><a href="javascript:test2()"]>screen 객체</a></p>
+    <p><a href="javascript:test3()"]>location 객체</a></p>
+    <p><a href="javascript:test4()"]>history 객체</a></p>
+    <p><a href="javascript:test5()"]>navigator 객체</a></p>
+    <p><a href="javascript:test6()"]>document 객체</a></p>
+    <p><a href="javascript:test7()"]>새창 열어서 어? 못봤다</a></p>
+</body>
+</html>
