@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function testHtml(){
+            console.log($('h2').html);
+
+            $('h2').each(function(idx, ob) {
+                console.log( $(ob).html() );
+            });
+
+            console.log($('#text1').html());
+
+            let str = '<table border="1">';
+                str += '<tr><td>aa</td></tr>';
+                str += '<tr><td>aa</td></tr>';
+                str += '</table>';
+            $('#text1').html(str);
+        }
+
+        function testText() {
+            console.log( $('h2').text() );
+
+            $('h2').each(function(idx, ob) {
+                console.log( $(ob).text() );
+            }); 
+        }
+
+        function testHtml2() {
+            let array = [{name:'naver', link:'http://www.naver.com/'}
+                        ,{name:'nate', link:'http://www.nate.com/'}];
+            let str = '';
+            $(array).each(function(i, ob) {
+                str += '<p><a href="' + ob.link + '">' + ob.name + '</a></p>';
+            });
+            $('#output').html(str);
+        }
+
+        function testVal() {
+            let text = $('input[type="text"]').val();
+            alert(text);
+            $('input[type="text"]').val('수정된 문자열');
+        }
+
+        function testAddClass() {
+            $('#textDiv').addClass('bluetext');
+            $('#textDiv').addClass('yellowbox');
+        }
+        function testRemoveClass() {
+            $('#textDiv').removeClass('bluetext');
+            $('#textDiv').removeClass('yellowbox');
+        }
+
+        function testAttr() {
+            alert( $('#img1').attr('src') );
+            $('#img1').attr('src', '../image/icon2.png'); 
+        }
+    </script>
+
+<style>
+    .bluetext {
+        font-size: 30px;
+        color: blue;
+    }
+    .yellowbox {
+        border: 1px solid black;
+        background-color: yellow;
+    }
+</style>
+
+
+</head>
+<body>
+    <h1>[ 문서 객체 조작 ]</h1>
+    <p><a href="javascript:testHtml()">html() 함수 사용</a></p>
+    <p><a href="javascript:testText()">html() 함수 사용</a></p>
+    <blockquote>
+        <h2><b>태그</b>를 사용한 문자열1</h2>
+        <h2><i>태그</i>를 사용한 문자열2</h2>
+    </blockquote>
+
+    
+    <p><a href="javascript:testHtml2()">html()함수 연습 2</a></p>
+    <blockquote>
+        <div id="output"></div>
+    </blockquote>
+
+    <p><a href="javascript:testVal()">val()함수 연습</a></p>
+    <blockquote>
+        <p><input type="text"></p>
+    </blockquote>
+
+    <p><a href="javascript:testAddClass()">addClass()함수 연습</a></p>
+    <p><a href="javascript:testRemoveClass()">removeClass()함수 연습</a></p>
+    <blockquote>
+        <div id="textDiv">div클래스 내의 문자열</div>
+    </blockquote>
+
+    <p><a href="javascript:testAttr()">attr()함수 연습</a></p>
+    <p><img id="img1" src="../image/icon1.png"></p>
+
+</body>
+</html>

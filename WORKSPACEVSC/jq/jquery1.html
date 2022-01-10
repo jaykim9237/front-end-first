@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 연습</title>
+
+    <!--jquery 파일 불러오기 p.161-->
+    
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        //페이지가 로딩되고 바로 실행되는 부분
+        //ready는 바로 시작 되는 부분이야. 그래서 프로그램이 시작되자 바라 실행 되는 것을 ready안에 넣어야해 
+       /**       $(document).ready(function(){
+            alert('jquery 실행');
+        }) 이렇게 한개의 이벤트를 실행해봄으로서 제이쿼리를 잘 불러왔나 보는거야**/
+
+        $(document).ready(function(){
+            //p.170 기본 선택자
+            $('h1').css('color', 'blue');
+            $('#text1').css('color', 'red');
+            $('.text2').css('color', 'green');
+            $('.text3').css('background-color', 'yellow').css('border', '1px', 'solid', 'purple');
+            //p.190 제이쿼리 탐색 선택자
+            $('p:first').css('color', 'pink');
+            //속성선택자 p.206
+            $('input[type = "text"]').css('background-color', 'yellow')
+       
+            $('p:first').addClass('boxstyle');    
+        });
+    </script>
+
+    <style>
+        .boxstyle{
+            color: blue;
+            width: 200px;
+            background-color: skyblue;
+            font-size: 30px;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>[ jquery 선택자 ]</h1>
+    <p>p태그</p>
+    <p id="text1">id 있는 p 태그</p>
+    <P class="text2">class가 있는 태그</P>
+    <p class="text3">p태그</p>
+
+    <input type="text"><br>
+    <input type="checkbox"><br>
+    <select>
+        <option>aaaa</option>
+        <option selected>bbbb</option>
+        <option>cccc</option>
+    </select>
+</body>
+</html>

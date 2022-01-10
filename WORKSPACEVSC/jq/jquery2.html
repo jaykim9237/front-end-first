@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+s
+
+    <script>
+        function testArray(){
+            let ar = [10, 20];
+            ar.push(30);
+            alert('배열의 첫번째요소:' + ar[0] + '\n배열크기:' + ar.length +'\n 배열전체:' +ar);
+        }
+
+        function testEach(){
+            let arNumber = [20, 50, 20, 90];
+            //1) $.each(배열의 이름, 함수 (미리 정의하지 않았으면 그 자리에서 만들어주면 됨))
+            //? 함수가 배열의 값의 수만큼 실행 돼 (호출 돼)
+            $.each(arNumber,function(i, n){
+                console.log('i: ' + i + ', n:' + n);
+            });
+
+            //2)
+            $(arNumber).each(function(i,n){
+                console.log('i: ' + i + ', n:' + n);
+            });
+
+            //arNumber배열의 모든 요소의 합계
+            /*
+            let s = 0;
+            $(arNumber).each(function(i,n){
+                console.log(
+                    for (let i = 0; i < array.length; i++) {
+                        s =+n;
+                    }
+                )
+                    ????? 읭 나 뭔가 잔뜩 잘못이해한거 같은데 
+            })*/
+
+            let s =0
+            $(arNumber).each(function(i, n){
+                s += n;
+            })
+            console.log('합계는: ' + s);
+        }
+
+        function testEach2(){
+            let arObject = [{num:10, name:'aaa', title:'제목1'},
+                            {num:20, name:'bbb', title:'제목2'},
+                            {num:30, name:'ccc', title:'제목3'}];
+            $(arObject).each(function(index, value){
+                console.log(value.num); //객체의 속성 사용
+            });
+        }
+    </script>
+</head>``   
+</html>
