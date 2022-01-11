@@ -58,7 +58,7 @@
             let num = document.getElementById('num').value;
 
             let thisYear = new Date().getFullYear();    //올해 (4자리)
-            let year = Number(num.substring(0, 2));     //태어난 해 (2자리)
+            let year = Number(num.substring(0, 2));     //태어난 해 (2자리) 앞에 두개만 잘라서 넣었던 것이야 !
             let s = num.charAt(7);          //성별 (문자로 1,2,3,4 중 하나)
 
             if (s == '1' || s == '2')

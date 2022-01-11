@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 연습4</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+
+        //p246
+        $(document).ready(function(){
+            $('#bt1').on('click', eventTest1);
+            $('#bt2').on('click', eventTest2);
+            $('#bt3').on('click', eventTest3);
+
+            $('#text1').on('click', function(){
+                alert('text1에 클릭이벤트');
+            });
+           
+            $('#text2').on('mouseover', function(){
+                $('#text1').trigger('click');
+            });
+
+            $('#text3').on('click', function(){
+                setTimeout(function(){
+                    $('#text1').trigger('click');
+                }, 3000);
+            });
+
+            $('#img1').on('click', function(){
+                $(this).attr('src','../image/que.png');
+            });
+           
+            $('#img2').on('mouseenter', function(){
+                $(this).css('width', 300);
+                $(this).css('heigh', 300);
+            });
+            $('#img2').on('mouseleave', function(){
+                $(this).css('width', 100);
+                $(this).css('heigh', 100);
+            });
+
+            $('#input1, #input2').on('focus', function(){
+                $(this).removeClass('inputStyle1');
+                $(this).addClass('inputStyle2');
+            });
+
+            $('#input1, #input2').on('blur', function(){
+                $(this).removeClass('inputStyle2');
+                $(this).addClass('inputStyle1');
+            });
+            
+            //==입력란의 글자수 세기==
+            //id가 "input3"인 객체의 "keyup"  
+            //id가 "input3"인 객체의 "value"를 읽어서 글자수 세기  
+            //글자수를 id가"count"인 객체의 HTML영역에 넣기 
+            //input3인 객체의 랭스가 10 이상이면 on함수 사용 사용 아니면 리턴
+
+            /* 자바스크립트를 활용해서
+            $('#input3').on('keyup', function() {
+                let input = document.getElementById('input3');
+                let s = input.value; 
+                let n = s.length;
+
+                let div = document.getElementById('count');
+                div.innerHTML = n;
+            })*/
+            
+            //jquery 사용해서 
+            $('#input3').on('keyup', function() { 
+            let n =$('#input3').val().length;
+            //조건을 넣을 수 있어
+
+            if(n > 10){
+                alert('10자리 이하만 입력하세요');
+                $('#input3').val($('#input3').val().substring(0,10)) //지우고 같은 것을 다시 넣어서, 똑같은거를 10까지만 넣어서 그 뒤는 잘려 보이게 하는거지 
+                //스트링할 때 배웠움
+                return;
+            }
+            $('#count').html(n);
+            });
+
+            $('.bt').on('click', function(){
+                //attr 속성을 변경하는데도 쓸 수 있지만 없는 속성을 만들어서 사용할수도 있어 
+                let n = $(this).attr('number')//값을 구별하기 위해서 사용하는 것이라고 보면 좋아 
+                alert('버튼 누름' + n); 
+            });
+        });//ready()
+
+
+       
+//여기 부분이 뭔지 잘 생각해보자 함스를 만들어주는거랑 그 함수를 다르게 사용하게 하는거지 
+        //'실행' 버튼을 클릭하면 실행될 함수
+        function eventTest1(){
+            alert('eventTest() 실행됨' );
+        }
+        function eventTest2(){
+            $('#bt1').on('click', eventTest1);
+        }
+        function eventTest3(){
+            $('#bt1').off('click');
+        }
+
+      
+    </script>
+    <style>
+        #text1{
+            background-color: peru;
+            color: rebeccapurple;
+            cursor: default;
+            width: 250px;
+            font-size: 20px;
+        }
+
+        .inputStyle1{
+            background-color: rosybrown;
+            color: saddlebrown;
+            border: 1px solid yellow;
+            font-weight: normal;
+        }
+        .inputStyle2{
+            background-color: yellowgreen;
+            color: blueviolet;
+            border: 1px solid plum;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!--p.246-->
+    <h1>[ jQuery의 이벤트 처리]</h1>
+    <ul>
+        <li>이벤트 연결 : $(선택자).on(이벤트이름(방법), 함수)</li>
+        <li>이벤트 제거 : $(선택자).off(이벤트이름, 함수)</li>
+        <li>이벤트 강제발생 : $(선택자).trigger(이벤트이름)</li><!--발생한 것 처럼 강제로 상황을 만들 수 있어 trigger-->
+
+        <li>이벤트 연결과 해제 
+            <p><input type="button" id="bt1" value="실행"></p>
+            <p><input type="button" id="bt2" value="이벤트 연결"></p>
+            <p><input type="button" id="bt3" value="이벤트 해제"></p>
+        </li>
+
+        <li>이벤트 강제 발생과 시간 지연
+            <p id="text1">일반 택스트에 이벤트 연결</p>
+            <p id="text2">이벤트 강제 발생(마우스 올리면)</p>
+            <p id="text3">3초 뒤에 이벤트 강제 발생</p>
+        </li>
+
+        <li> 이미지의 이벤트 처리
+            <p><img id="img1" src="../image/dizzy.png"></p>
+            <p><img id="img2" src="../image/ing.png"></p>
+        </li>
+
+        <li> 포커스 이벤트 처리
+            <P><input type="text" id="input1"></P>
+            <P><input type="text" id="input2"></P>
+        </li>
+    </ul>
+
+    <li>키 이벤트 처리
+        <P><input type="text" id="input3"><span id="count">0</span>글자</P>
+    </li>
+
+    <li>사용자 정의 속성
+        <input type="button" value="1번 버튼" class="bt" number="1">
+        <input type="button" value="2번 버튼" class="bt" number="2">
+        <input type="button" value="3번 버튼" class="bt" number="3">
+    </li>
+</body>
+</html>

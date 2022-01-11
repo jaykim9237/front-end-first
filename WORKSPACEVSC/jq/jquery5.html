@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 연습5</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        //p.290
+         $(document).ready(function(){
+            $('#btHide').on('click', function(){
+                $('#textDiv').hide();
+                $(this).addClass('effect');
+            })
+        });
+        
+         $(document).ready(function(){
+            $('#btShow').on('click', function(){
+                $('#textDiv').show();
+                $(this).addClass('effect');
+            })
+        });
+
+         $(document).ready(function(){
+            $('#fadeOut').on('click', function(){
+                $('#textDiv').fadeOut("fast");
+                $(this).addClass('effect');
+            })
+        });
+
+         $(document).ready(function(){
+            $('#slideUp').on('click', function(){
+                $('#textDiv').slideUp();
+                $(this).addClass('effect');
+            })
+        });
+
+         $(document).ready(function(){
+            $('#fadeIn').on('click', function(){
+                $('#textDiv').fadeIn();
+                $(this).addClass('effect');
+            })
+        });
+
+         $(document).ready(function(){
+            $('#slideDown').on('click', function(){
+                $('#textDiv').slideDown();
+                $(this).addClass('effect');
+            })
+        });
+
+         $(document).ready(function(){
+            $('#toggle').on('click', function(){
+                $('#textDiv').toggle();
+                $(this).addClass('effect');
+            })
+        });
+         $(document).ready(function(){
+            $('#fadeToggle').on('click', function(){
+                $('#textDiv').fadeToggle();
+                $(this).addClass('effect');
+            })
+        });
+         $(document).ready(function(){
+            $('#slideToggle').on('click', function(){
+                $('#textDiv').slideToggle();
+                $(this).addClass('effect');
+            })
+        });
+         $(document).ready(function(){
+            $('#fadeTo').on('mouseenter', function(){
+                $('#textDiv').fadeTo("fast", 0.3);
+                $(this).addClass('effect');
+            })
+        });
+        
+    </script>
+    <style>
+        #textDiv{
+            width: 200px;
+            height: 200px;
+            border: 3px solid rebeccapurple;
+            background-color: rosybrown;
+            color: red;
+            font-size: 15px;
+        }
+
+        .effect{
+            background-color: rgb(224, 186, 186);
+            color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <p>
+    <input type="button" id="btHide" value="click to hide()">
+    <input type="button" id="btShow" value="click to show()">
+    <input type="button" id="fadeOut" value="click to fadeOut">
+    <input type="button" id="slideUp" value="click to slideUp">
+    <input type="button" id="fadeIn" value="click to fadeIn">
+    <input type="button" id="slideDown" value="click to slideDown">
+    <input type="button" id="toggle" value="click to toggle">
+    <input type="button" id="fadeToggle" value="click to fadeToggle">
+    <input type="button" id="slideToggle" value="click to slideToggle">
+    <input type="button" id="fadeTo" value="click to fadeTo">
+    </p>
+    <div id="textDiv">
+        <p>DIV 태그 내의 문자열</p>
+        <p>DIV 태그 내의 문자열</p>
+        <p>DIV 태그 내의 문자열</p>
+        <p>DIV 태그 내의 문자열</p>
+        <p>DIV 태그 내의 문자열</p>
+    </div>
+</body>
+</html>
